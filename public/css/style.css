@@ -1,0 +1,137 @@
+@charset "UTF-8";
+
+
+dt{
+  font-size:125%;
+}
+dl{
+  font-size:125%;
+}
+
+div{
+    margin: 1em 0;
+    font-size: 18px;
+}
+
+dl {
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #ccc;
+}
+img{
+    max-height: 10em;
+}
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    margin:0 auto;
+    padding: .9em 2em;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000000;
+    font-size: 1em;
+}  
+textarea{
+    width: 75%;
+    height:10em;
+    padding: 8px 10px;
+    border: 1px solid #d2d2d2;
+    border-radius: 3px;
+    background: #f7f7f7;
+    color: #333;
+    font-size: 2em;
+    line-height: 1.5;
+}
+
+textarea::placeholder {
+    font-size:40px;
+    color: #999;
+}
+/*dl dt*/
+dl{
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+flex-wrap: wrap;
+align-items: stretch;	
+width: 100%;
+border: 1px solid #ccc;
+border-bottom: none;
+}
+dl dt{
+background: #f5f5f5;
+padding: 5px;
+width: 150px;
+border-right: 1px solid #ccc;
+border-bottom: 1px solid #ccc;
+}
+dl dd{
+background: #fff;
+padding: 5px;
+width: calc(100% - 150px);
+border-bottom: 1px solid #ccc;
+}
+
+
+/*href button*//*<a href="遷移先" class="btn"*/
+.btn {
+    display: inline-block;
+    width: 100%;
+    max-width: 150px; /* ボタン幅 */
+    border: 2px solid #4CAF50; /* 線幅・種類・色 */
+    color: #4CAF50; /* 文字色 */
+    background: #fff; /* 背景色 */
+    padding: 1em 2em;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.3s;
+  }
+  
+  /* マウスオーバーした際のデザイン */
+  .btn:hover {
+    border-style: dashed;
+  }
+
+
+/*button*/
+button {
+    position: relative;
+    background-color: transparent; /* 背景色 */
+    color: #4CAF50; /* 文字色 */
+    padding: 15px 86px; /* パディング */
+    text-align: center; /* 文字のアライメント */
+    text-decoration: none; /* 文字装飾 */
+    display: inline-block; /* ボタンの表示方法 */
+    font-size: 16px; /* フォントサイズ */
+    font-family: Arial, sans-serif; /* フォント */
+    margin: 8px 2px; /* 外側の余白 */
+    cursor: pointer; /* カーソル */
+    border: 2px solid #4CAF50; /* 枠線 */
+    border-radius: 5px; /* ボタンの角丸 */
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #4CAF50 transparent transparent transparent;
+   transform: rotate(-90deg);
+}
+
+/*input*/
+input{
+  width: 30%; /*親要素いっぱい広げる*/
+  padding: 10px 15px; /*ボックスを大きくする*/
+  font-size: 16px;
+  border-radius: 3px; /*ボックス角の丸み*/
+  border: 2px solid #ddd; /*枠線*/
+  box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
+}
