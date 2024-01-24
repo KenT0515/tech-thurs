@@ -1,0 +1,86 @@
+「画像が投稿できる掲示板」の手順書
+1からの構築の仕方が下に書きまとめてあります
+
+EC2インスタンスを作成
+
+PowerShell を立ち上げる
+
+作ったEC2インスタンスに接続する
+
+vimのインストール
+sudo yum install vim -y
+
+screenのインストール
+sudo yum install screen -y
+または
+sudo apt install screen -y
+
+●Docker--------------------------------------------------------------------------------------------
+
+Dockerのインストール
+sudo yum install -y docker
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -a -G docker ec2-user
+
+
+以下のファイルをgithubから持ってきてDocker内に入れてください
+nginx/conf.d/default.conf
+public/signup.php
+signup_finish.php
+login.php
+login_finish.php
+timeline.php
+users.php
+profile.php
+follow.php
+timeline_json.php
+setting/index.php
+        name.php
+        icon.php
+        birthday.php
+        introduction.php
+        cover.php
+js/script.js
+Dockerfile
+
+
+
+●MySQLの用意---------------------------------------------------------------------------------------
+
+DB techcに接続
+docker compose exec mysql mysql techc
+これでDBに接続したらテーブルを用意してください
+
+----------------------------------------------------------------------------------------------------
+テーブルの用意まで終わったら
+
+docker compose up
+
+その後に
+http://EC2インスタンスのIPアドレス/timeline.php
+
+これで接続できます
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
