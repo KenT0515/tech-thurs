@@ -51,6 +51,37 @@ Dockerfile
 DB techcに接続
 docker compose exec mysql mysql techc
 これでDBに接続したらテーブルを用意してください
+以下がsql
+CREATE TABLE `users` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `name` TEXT NOT NULL,
+    `email` TEXT NOT NULL,
+    `password` TEXT NOT NULL,
+    `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+ALTER TABLE `users` ADD COLUMN icon_filename TEXT DEFAULT NULL;
+ALTER TABLE `users` ADD COLUMN introduction TEXT DEFAULT NULL;
+
+ALTER TABLE `users` ADD COLUMN cover_filename TEXT DEFAULT NULL;
+
+ALTER TABLE `users` ADD COLUMN birthday DATE DEFAULT NULL;
+
+
+CREATE TABLE `bbs_entries` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `body` TEXT NOT NULL,
+    `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+ALTER TABLE `bbs_entries` ADD COLUMN image_filename TEXT DEFAULT NULL;
+
+
+CREATE TABLE `user_relationships` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `followee_user_id` INT UNSIGNED NOT NULL,
+    `follower_user_id` INT UNSIGNED NOT NULL,
+    `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP
+);
 
 ----------------------------------------------------------------------------------------------------
 テーブルの用意まで終わったら
